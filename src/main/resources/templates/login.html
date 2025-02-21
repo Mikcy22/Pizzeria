@@ -1,0 +1,107 @@
+<!--
+
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+<h2>Login</h2>
+<form id="loginForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+
+<form th:action="@{/auth/register}" method="get">
+  <button type="submit">Registrarse</button>
+</form>
+
+<script th:src="@{/login.js}"></script>
+
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Pizzería</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+        body {
+
+            background: url('https://img.freepik.com/vector-gratis/fondo-pizza-dibujada-mano_23-2150905263.jpg?t=st=1740168744~exp=1740172344~hmac=5779e43135283376f6fdd3108c2cd38f30313999e4f649e51794c067dd4c183f&w=1060') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        button#btnregister {
+         background-color: #ce0000;
+         color: white;
+        }
+
+        button.btn.btn-danger.w-100 {
+          background-color: #fffa8a;
+          color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="login-container">
+  <h2 class="mb-4"><i class="fas fa-pizza-slice"></i> Bienvenido a la Micky Pizzería</h2>
+  <form id="loginForm">
+    <div class="mb-3">
+      <label for="username" class="form-label">Usuario</label>
+      <input type="text" id="username" name="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" id="password" name="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-danger w-100">Iniciar Sesión</button>
+  </form>
+  <hr>
+  <form th:action="@{/auth/register}" method="get">
+    <button type="submit" id= "btnregister" class="btn w-100">Registrarse</button>
+  </form>
+</div>
+
+<script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Inicio de sesión en progreso...");
+        });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
