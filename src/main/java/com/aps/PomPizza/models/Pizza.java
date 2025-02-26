@@ -18,10 +18,9 @@ public class Pizza {
     private String imageUrl;
     private boolean disponible;
 
-
     //Getters y Setters
-    public ObjectId get_id() {
-        return _id;
+    public String get_id() {
+        return _id.toHexString();
     }
 
     public void set_id(ObjectId _id) {

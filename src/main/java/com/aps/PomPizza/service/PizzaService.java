@@ -20,4 +20,19 @@ public class PizzaService {
         pizzaRepository.deleteById(id);
         return "Pizza borrada correctamente";
     }
+
+    public String editPizza(Pizza pizza){
+
+        if (pizza.get_id() == null) {
+            return "Error: ID no válido.";
+        }
+
+        // Verificar si la pizza ya existe
+        if (!pizzaRepository.existsById(pizza.get_id())) {
+            return "Error: No se encontró la pizza con ese ID.";
+        }
+
+        pizzaRepository.save(pizza);
+        return "Pizza editada correctamente";
+    }
 }

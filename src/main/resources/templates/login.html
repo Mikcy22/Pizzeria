@@ -42,8 +42,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
         body {
-
-            background: url('https://img.freepik.com/vector-gratis/fondo-pizza-dibujada-mano_23-2150905263.jpg?t=st=1740168744~exp=1740172344~hmac=5779e43135283376f6fdd3108c2cd38f30313999e4f649e51794c067dd4c183f&w=1060') no-repeat center center/cover;
+            background: url('/images/fondo.png') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -78,6 +77,7 @@
 <body>
 <div class="login-container">
   <h2 class="mb-4"><i class="fas fa-pizza-slice"></i> Bienvenido a la Micky Pizzería</h2>
+
   <form id="loginForm">
     <div class="mb-3">
       <label for="username" class="form-label">Usuario</label>
@@ -87,9 +87,12 @@
       <label for="password" class="form-label">Contraseña</label>
       <input type="password" id="password" name="password" class="form-control" required>
     </div>
+
     <button type="submit" class="btn btn-danger w-100">Iniciar Sesión</button>
   </form>
+
   <hr>
+
   <form th:action="@{/auth/register}" method="get">
     <button type="submit" id= "btnregister" class="btn w-100">Registrarse</button>
   </form>
@@ -101,6 +104,10 @@
             alert("Inicio de sesión en progreso...");
         });
     </script>
+
+
+<script th:src="@{/login.js}"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

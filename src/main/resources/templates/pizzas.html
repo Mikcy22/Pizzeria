@@ -6,8 +6,28 @@
 </head>
 <body>
 
+<h2>Pizzas</h2>
 
+<form th:action="@{/pizzas/crearPizza}" method="get">
+    <button type="submit">Crear pizza</button>
+</form>
 
+<h2 style="text-align: center;">Lista de Pizzas</h2>
+
+<table border="2" >
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Ingredientes</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="pizza-table">
+    <!-- Aquí se insertarán las pizzas dinámicamente -->
+    </tbody>
+</table>
 
 
 <script th:src="@{/pizzas.js}"></script>

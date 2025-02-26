@@ -14,8 +14,6 @@ public class Usuario {
     private String email;
     private String rol;
 
-
-
     //Getters y setters
 
     public ObjectId getId() {

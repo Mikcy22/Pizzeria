@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Formulario editar pizza</h2>
+  <form id="editPizzaForm">
+
+    <input type="hidden" name="id" id="id" th:value="${pizza._id}">
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" th:value="${pizza.nombre}" required><br><br>
+
+    <label for="descripcion">Descripcion</label>
+    <input type="text" id="descripcion" name="descripcion" th:value="${pizza.descripcion}"><br><br>
+
+    <label for="nuevoIngrediente">Ingrediente</label>
+    <input type="text" id="nuevoIngrediente" placeholder="Escribe un ingrediente">
+    <button type="button" onclick="agregarIngrediente()">Agregar</button>
+
+    <ul id="lista-ingredientes"></ul>
+
+    <!-- Campo oculto para almacenar los ingredientes como texto -->
+    <input type="hidden" name="ingredientes" id="ingredientesInput" th:value="${pizza.ingredientes}">
+
+
+    <label for="precio">Precio</label>
+    <input type="number" id="precio" name="precio" step="0.01" th:value="${pizza.precio}"><br><br>
+
+    <label for="imageUrl">Imagen</label>
+    <input type="url" id="imageUrl" name="imageUrl" th:value="${pizza.imageUrl}"><br><br>
+
+    <label for="disponible">Disponible</label>
+    <input type="checkbox" id="disponible" name="disponible" th:value="${pizza.disponible}"><br><br>
+
+    <button type="submit">Guardar pizza</button>
+
+  </form>
+
+<script th:src="@{/editPizza.js}"></script>
+</body>
+</html>
